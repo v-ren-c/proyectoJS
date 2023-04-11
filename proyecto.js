@@ -1,25 +1,5 @@
 //SIMULADOR INTERACTIVO PRIMERA ENTREGA
 
-//INICIAR
-iniciando();
-
-//Funcion Iniciando
-const iniciando = () => {
-    let inicio = true
-    inicio = confirm("Bienvenidx al simulador de buzos personalizados, aprieta aceptar para comenzar")
-    if (inicio) {
-        let colorF = colorBuzo()
-        let tipoF = tipoBuzo()
-        let formaF = formaBuzo()
-        let talleF = talleBuzo()
-        detallePedido(colorF, tipoF, formaF, talleF)
-    }
-    else {
-        alert("hasta luego!")
-    }
-    
-}
-
 
 //Funcion ColorBuzo
 const colorBuzo = () => {
@@ -38,10 +18,8 @@ const tipoCorrecto = (tipoIn) => {
     if ((tipoIn == 1) || (tipoIn == 2) || (tipoIn == 3)) {
         return tipoIn
     } else {
-        do {
-            tipoIn = Number(prompt(" Numero ingresado INCORRECTO, escriba el numero correspondiente a la opcion seleccionada y luego haga click en aceptar \n 1. TIPO INVIERNO (frizado, gruso)\n 2. TIPO VERANO (rustico, liviano)\n 3. TIPO LLUVIA (microfibra impermeable)\n Por ejemplo: ingrese el numero '3' y seleccione aceptar "))
-        } while ((tipoIn == 1) || (tipoIn == 2) || (tipoIn == 3))
-        return tipoIn
+        alert("OPCION INCORRECTA. Escriba el numero correspondiente a la opcion seleccionada. Por ejemplo: ingrese el numero '3' y seleccione aceptar")
+        return tipoBuzo()
     }
 }
 
@@ -56,10 +34,8 @@ const formaCorrecta = (formaIn) => {
     if ((formaIn == 1) || (formaIn == 2) || (formaIn == 3)) {
         return formaIn
     } else {
-        do {
-            formaIn = Number(prompt(" Numero ingresado INCORRECTO, escriba el numero correspondiente a la opcion seleccionada y luego haga click en aceptar \n 1. CAPUCHA SIN BOLSILLO \n 2. CAPUCHA CON BOLSILLO \n 3. SIMPLE (cuello redondo, sin capucha ni bolsillo) \n Por ejemplo: ingrese el numero '3' y seleccione aceptar"))
-        } while ((formaIn == 1) || (formaIn == 2) || (formaIn == 3))
-        return formaIn
+        alert("OPCION INCORRECTA. Escriba el numero correspondiente a la opcion seleccionada. Por ejemplo: ingrese el numero '3' y seleccione aceptar")
+        return formaBuzo()
     }
 }
 //Funcion TalleBuzo
@@ -70,13 +46,11 @@ const talleBuzo = () => {
 
 //Revision Talle
 const talleCorrecto = (talleIn) => {
-    if ((talleIn == 1) || (talleIn == 2) || (talleIn == 3)|| (talleIn == 4) || (talleIn == 5)) {
+    if ((talleIn == 1) || (talleIn == 2) || (talleIn == 3) || (talleIn == 4) || (talleIn == 5)) {
         return talleIn
     } else {
-        do {
-            talleIn = Number(prompt(" Numero ingresado INCORRECTO, escriba el numero correspondiente a la opcion seleccionada y luego haga click en aceptar \n 1. TALLE XS \n 2. TALLE S \n 3. TALLE M \n 4. TALLE L\n 5. TALLE XL \n Por ejemplo: ingrese el numero '5' y seleccione aceptar"))
-        } while ((talleIn == 1) || (talleIn == 2) || (talleIn == 3) || (talleIn == 4) || (talleIn == 5))
-        return talleIn
+        alert("OPCION INCORRECTA. Escriba el numero correspondiente a la opcion seleccionada. Por ejemplo: ingrese el numero '3' y seleccione aceptar")
+        return talleBuzo()
     }
 }
 
@@ -92,3 +66,21 @@ const detallePedido = (color, tipo, forma, talle) => {
 }
 
 
+//Funcion Iniciando
+const iniciando = () => {
+    let inicio = confirm("Bienvenidx al simulador de buzos personalizados, aprieta aceptar para comenzar")
+    if (inicio) {
+        let colorF = colorBuzo()
+        let tipoF = tipoBuzo()
+        let formaF = formaBuzo()
+        let talleF = talleBuzo()
+        detallePedido(colorF, tipoF, formaF, talleF)
+    }
+    else {
+        alert("hasta luego!")
+    }
+
+}
+
+//INICIAR
+iniciando();
